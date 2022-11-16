@@ -1,0 +1,41 @@
+<%- include('partials/header'); -%>
+<body>
+  <%- include('partials/navbar'); -%>
+  <div class="container">
+    <div class="card mt-md-3">
+      <div class="card-header"><h1>Guia de perguntas</h1></div>
+      <div class="card-body">
+        <!-- 
+          Method informa o method que está csendo usado na rota
+          Action informa para qual rota esse dado deve ser enviado
+        -->
+        <form method="post" action="/salveQuestion">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" id="basic-addon1">titulo</label>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="titulo"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+              name="title"
+            />
+          </div>
+
+          <div class="input-group mt-md">
+            <div class="input-group-prepend">
+              <label class="input-group-text">Pergunta</label>
+            </div>
+            <textarea class="form-control" name="description"></textarea>
+          </div>
+          <button type="submit" class="btn btn-success mt-md-3">
+            Peguntar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+<%- include('partials/footer'); -%>

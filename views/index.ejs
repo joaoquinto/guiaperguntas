@@ -1,0 +1,21 @@
+<%- include('partials/header'); -%>
+<body>
+  <%- include('partials/navbar'); -%>
+  <div class="container mt-5">
+    <h1>Perguntas</h1>
+    <a href="/questions" class="btn btn-primary">Perguntar</a>
+    <% questions.forEach(({id, title, description, isAnswered}) => {%>
+    <div class="card mt-3">
+      <div class="card-body d-flex align-items-baseline ">
+        <h2><%= title %></h3>
+          <div class="rounded-circle <%= isAnswered == 1 ? 'bg-success' : 'bg-danger'  %>  bg-success ml-2" style="width: 15px; height: 15px;"></div>
+      </div>
+
+      <div class="card-footer">
+        <a class="btn btn-primary" href="/question/<%= id %>">Responder</a>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</body>
+<%- include('partials/footer'); -%>
